@@ -1,0 +1,13 @@
+<mat-card fxLayout="column" fxLayoutAlign="center center" >
+	<mat-card-header style="text-align: center;">
+		<mat-card-title style="font-size: 30px; margin-top: 40px">
+			Estructura organizativa
+		</mat-card-title>
+		<mat-card-subtitle style="font-size: 18px; margin-top: 20px">
+			<!-- Forma parte de la gran famila de emprendedores Venezolanos -->
+		</mat-card-subtitle>
+	</mat-card-header>
+	<mat-card-content style="margin-top: 40px">
+		<ngx-org-chart [nodes]="nodes" direction="horizontal"></ngx-org-chart>
+	</mat-card-content>
+</mat-card>

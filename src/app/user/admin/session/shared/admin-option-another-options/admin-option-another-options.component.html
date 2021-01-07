@@ -1,0 +1,52 @@
+	<mat-card class="mat-elevation-z5">
+		<div fxLayout="row" fxLayoutAlign="start center" class="mat-title">
+			<mat-icon>list</mat-icon>
+			&nbsp;
+			<span>Opciones adicionales</span>
+		</div>
+
+		<div fxLayout="column" fxLayoutGap="5px">
+			<div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutAlign.lt-sm="space-between stretch" fxLayoutAlign.lt-sm="space-between stretch"fxLayout.lt-sm="column">
+
+				<mat-card class="mat-elevation-z5" fxFlex.lt-md="100" fxFlex.lt-sm="100" fxFlex="30" style="margin: 10px;">
+					<mat-card-header>
+						<img mat-card-avatar src="assets/images/admin/news.svg">
+						<mat-card-title>Noticias</mat-card-title>
+						<mat-card-subtitle>Última modificación hace 28 minutos</mat-card-subtitle>
+					</mat-card-header>
+					<mat-card-content>
+						<p>
+							Aquí podrás crear, editar y eliminar noticias
+						</p>
+					</mat-card-content>
+					<mat-card-actions>
+						<button [routerLink]="'/'" fxFlex="100" mat-raised-button  matBadgeColor="warn">
+							Ver noticias
+						</button>
+					</mat-card-actions>
+				</mat-card>
+
+				<mat-card class="mat-elevation-z5" fxFlex.lt-md="100" fxFlex.lt-sm="100" fxFlex="30" style="margin: 10px;">
+					<mat-card-header>
+						<img mat-card-avatar src="assets/images/admin/society.svg">
+						<mat-card-title>SGR</mat-card-title>
+						<mat-card-subtitle>Última modificación hace 13 minutos</mat-card-subtitle>
+					</mat-card-header>
+					<mat-card-content>
+						<p>
+							Aquí podrás crear, editar y eliminar sociedad de garantía recíproca (SGR)
+						</p>
+					</mat-card-content>
+					<mat-card-actions>
+						<div fxLayout="row" fxLayout.lt-md="column" fxLayout.lt-sm="column">
+							&nbsp;
+							<button fxFlex="100" mat-raised-button  [routerLink]="''">
+								&nbsp;
+								Ver SGR
+							</button>
+						</div>
+					</mat-card-actions>
+				</mat-card>
+			</div>
+		</div>
+	</mat-card>

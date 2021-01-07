@@ -1,0 +1,26 @@
+<mat-carousel
+timings="150ms ease-in"
+[autoplay]="true"
+interval="3000"
+color="warn"
+maxWidth="auto"
+proportion="25"
+slides="5"
+[loop]="true"
+[hideArrows]="true"
+[hideIndicators]="true"
+[useKeyboard]="true"
+[useMouseWheel]="true"
+orientation="ltr">
+<mat-carousel-slide 
+#matCarouselSlide
+*ngFor="let slide of images; let i = index"
+[image]="slide.image"
+overlayColor="#00000040"
+[hideOverlay]="false">
+<div class="container">
+	<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+	<button (click)="onClick('videos')" mat-raised-button>Ver más</button>
+</div>
+</mat-carousel-slide>
+</mat-carousel>

@@ -1,0 +1,30 @@
+<div fxLayout="column" class="div-container">
+	<mat-card class="mat-card-container">
+		<mat-card-header fxLayout="column" style="margin-top: 5%;" class="mat-card-header-container">
+			<mat-card-title style="margin-bottom: 36px;" class="mat-card-title-container">
+				Recuperar contraseña
+			</mat-card-title>
+			<mat-card-subtitle class="mat-card-subtitle-container">
+				Ingresa el correo que usaste para registrarte en el sistema
+			</mat-card-subtitle>
+		</mat-card-header>
+	</mat-card>
+	<div fxLayout="column" fxLayoutAlign="center center">
+		<mat-card style="min-width: 40%;position: absolute;top: 30%;">
+			<mat-card-content>
+				<form [formGroup]="recoveryForm" fxLayout="column">
+					<mat-form-field appearance="fill">
+						<mat-label>Correo</mat-label>
+						<input matInput formControlName="email" required>
+						<mat-error *ngIf="recoveryForm['controls'].email.hasError('required')">El correo es requerido</mat-error>
+						<mat-error *ngIf="recoveryForm['controls'].email.hasError('email')">Email inválido. Ejem: micorreo@gmail.com</mat-error>
+					</mat-form-field>
+				</form>
+			</mat-card-content>
+			<mat-card-actions>
+				<button fxFlex="100" class="login-botton" [disabled]="recoveryForm.invalid" (click)="recoveryPass()" mat-raised-button>Enviar</button>
+			</mat-card-actions>
+		</mat-card>
+	</div>
+	<div></div>
+</div>

@@ -1,0 +1,59 @@
+<div fxLayout="column" class="div-container">
+	<div class="mat-card-container">
+	</div>
+	<div style="top: 6%;left: 4%;right: 4%;position: absolute;" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
+		<div fxLayout="column" style="margin-top: 1%;" class="mat-card-header-container">
+			<mat-card-title style="margin-bottom: 36px;" class="mat-card-title-container">
+				Registrarse
+			</mat-card-title>
+			<mat-card-subtitle class="mat-card-subtitle-container">
+				Primero, necesitamos saber a que sector perteneces:
+			</mat-card-subtitle>
+		</div>
+		<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+			<mat-card fxFlex="30" style="top: 30%;">
+				<mat-card-header>
+					<img src="assets/images/icons/idea.svg" mat-card-avatar>
+					<mat-card-title>
+						Emprendedor
+					</mat-card-title>
+				</mat-card-header>
+				<mat-card-content style="margin-top: 2%;">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend sapien id fermentum mollis.
+				</mat-card-content>
+				<mat-card-actions>
+					<button [routerLink]="'/user/entrepreneur/create'" fxFlex="100" class="login-botton" mat-raised-button>Registrase</button>
+				</mat-card-actions>
+			</mat-card>
+			<mat-card fxFlex="30" style="top: 30%;">
+				<mat-card-header>
+					<img src="assets/images/icons/team.svg" mat-card-avatar>
+					<mat-card-title>
+						Usuario 2
+					</mat-card-title>
+				</mat-card-header>
+				<mat-card-content style="margin-top: 2%;">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend sapien id fermentum mollis.
+				</mat-card-content>
+				<mat-card-actions>
+					<button [routerLink]="'/user/pyme/create'" fxFlex="100" class="login-botton" mat-raised-button>Registrase</button>
+				</mat-card-actions>
+			</mat-card>
+			<mat-card fxFlex="30" style="top: 30%;">
+				<mat-card-header>
+					<img src="assets/images/icons/office.svg" mat-card-avatar>
+					<mat-card-title>
+						Usuario 3
+					</mat-card-title>
+				</mat-card-header>
+				<mat-card-content style="margin-top: 2%;">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend sapien id fermentum mollis.
+				</mat-card-content>
+				<mat-card-actions>
+					<button [routerLink]="'/user/enterprise/create'" fxFlex="100" class="login-botton" mat-raised-button>Registrase</button>
+				</mat-card-actions>
+			</mat-card>
+		</div>
+	</div>
+	<div></div>
+</div>

@@ -1,0 +1,172 @@
+<div style="display: flex;justify-content: center;" class="background-form">
+	<mat-card class="mat-elevation-z5" style="margin-top: 40px;margin-bottom: 40px;">
+		<mat-card-header>
+			<img src="assets/images/icons/idea.svg" mat-card-avatar>
+			<mat-card-title>
+				Nuevo emprendedor
+			</mat-card-title>
+			<mat-card-subtitle></mat-card-subtitle>
+		</mat-card-header>
+		<mat-card-content style="display: flex;justify-content: center;">
+			<mat-vertical-stepper [linear]="isLinear" #stepper>
+				<mat-step [stepControl]="personalForm">
+					<form [formGroup]="personalForm">
+						<ng-template matStepLabel>Datos personales</ng-template>
+						<div fxLayout="column">
+							<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+								<mat-form-field>
+									<mat-label>Nombre</mat-label>
+									<input matInput formControlName="name" required>
+									<mat-error *ngIf="personalForm['controls'].name.hasError('required')">El nombre es requerido</mat-error>
+								</mat-form-field>
+								<mat-form-field>
+									<mat-label>Apellido</mat-label>
+									<input matInput formControlName="surname" required>
+									<mat-error *ngIf="personalForm['controls'].surname.hasError('required')">El apellido es requerido</mat-error>
+								</mat-form-field>
+							</div>
+							<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+								<mat-form-field>
+									<mat-label>Cédula</mat-label>
+									<input matInput placeholder="V123456" formControlName="dni" required>
+									<mat-error *ngIf="personalForm['controls'].dni.hasError('required')">La Cédula es requerida</mat-error>
+									<mat-error *ngIf="personalForm['controls'].dni.hasError('minlength')">Cédula inválida. Ejm: V1234567</mat-error>
+									<mat-error *ngIf="personalForm['controls'].dni.hasError('pattern')">Cédula inválida. Ejm: V1234567</mat-error>
+								</mat-form-field>
+								<mat-form-field>
+									<mat-label>Género</mat-label>
+									<mat-select formControlName="gender" required>
+										<mat-option value="male">
+											Maculino
+										</mat-option>
+										<mat-option value="female">
+											Femenino
+										</mat-option>
+									</mat-select>
+									<mat-error *ngIf="personalForm['controls'].gender.hasError('required')">El género es requerido</mat-error>
+								</mat-form-field>
+							</div>
+
+						</div>
+						<div>
+							<button mat-raised-button [routerLink]="'/auth/sign-up'">Regresar</button>
+							<button mat-raised-button class="next-button" matStepperNext [disabled]="personalForm.invalid">Siguiente</button>
+						</div>
+					</form>
+				</mat-step>
+				<mat-step [stepControl]="locationForm">
+					<form [formGroup]="locationForm">
+						<ng-template matStepLabel>Ubicación</ng-template>
+						<div fxLayout="column">
+							<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+								<mat-form-field>
+									<mat-label>Estado</mat-label>
+									<mat-select formControlName="state" required>
+										<mat-option *ngFor="let state of states" [value]="state">
+											{{state.name}}
+										</mat-option>
+									</mat-select>
+									<mat-error *ngIf="locationForm['controls'].state.hasError('required')">El estado es requerido</mat-error>
+								</mat-form-field> 
+								<mat-form-field>
+									<mat-label>Municipio</mat-label>
+									<mat-select formControlName="municipality" required>
+										<mat-option *ngFor="let municipality of municipalities" [value]="municipality">
+											{{municipality.name}}
+										</mat-option>
+									</mat-select>
+									<mat-error *ngIf="locationForm['controls'].municipality.hasError('required')">El municipio es requerido</mat-error>
+								</mat-form-field>
+							</div>
+							<mat-form-field>
+								<mat-label>Parroquia</mat-label>
+								<mat-select formControlName="parish_id" required>
+									<mat-option *ngFor="let parish of parishes" [value]="parish.id">
+										{{parish.name}}
+									</mat-option>
+								</mat-select>
+								<mat-error *ngIf="locationForm['controls'].parish_id.hasError('required')">La parroquia es requerida</mat-error>
+							</mat-form-field>
+							<mat-form-field>
+								<mat-label>Dirección</mat-label>
+								<input matInput formControlName="address" required>
+								<mat-error *ngIf="locationForm['controls'].address.hasError('required')">La dirección es requerida</mat-error>
+							</mat-form-field>
+						</div>
+						<div>
+							<button mat-raised-button matStepperPrevious>Anterior</button>
+							<button mat-raised-button class="next-button" matStepperNext [disabled]="locationForm.invalid">Siguiente</button>
+						</div>
+					</form>
+				</mat-step>
+				<mat-step [stepControl]="contactForm">
+					<form [formGroup]="contactForm">
+						<ng-template matStepLabel>Contacto</ng-template>
+						<div fxLayout="column">
+							<mat-form-field>
+								<mat-label>Teléfono</mat-label>
+								<input placeholder="04141234567" matInput formControlName="phone" required>
+								<mat-error *ngIf="contactForm['controls'].phone.hasError('pattern')">Teléfono inválido. Ejem: 04141234567</mat-error>
+							</mat-form-field>
+							<mat-form-field>
+								<mat-label>Correo</mat-label>
+								<input placeholder="micorreo@mail.com" matInput formControlName="email" required>
+								<mat-error *ngIf="contactForm['controls'].email.hasError('required')">El correo es requerido</mat-error>
+								<mat-error *ngIf="contactForm['controls'].email.hasError('email')">Email inválido. Ejem: micorreo@gmail.com</mat-error>
+							</mat-form-field>
+						</div>
+						<div>
+							<button mat-raised-button matStepperPrevious>Anterior</button>
+							<button mat-raised-button class="next-button" matStepperNext [disabled]="contactForm.invalid">Siguiente</button>
+						</div>
+					</form>
+				</mat-step>
+				<mat-step [stepControl]="typeForm">
+					<form [formGroup]="typeForm">
+						<ng-template matStepLabel>Emprendimiento</ng-template>
+						<div fxLayout="column">
+							<mat-form-field>
+								<mat-label>Tipo de Emprendimiento</mat-label>
+								<mat-select formControlName="entrepreneurship" required>
+									<mat-option *ngFor="let type of allEntrepreneurship" [value]="type">
+										{{type.name}}
+									</mat-option>
+								</mat-select>
+								<mat-error *ngIf="typeForm['controls'].entrepreneurship.hasError('required')">El tipo de emprendimiento es requerido</mat-error>
+							</mat-form-field>
+							<mat-radio-group *ngIf="entrepreneurshipType.length>0" fxLayout="column" fxLayoutGap="10px" formControlName="typeEntrepreneur">
+								<mat-radio-button (change)="typeEntrepreneurFlag = true" *ngFor="let child of entrepreneurshipType" [value]="child">
+									{{child.name}}
+								</mat-radio-button>
+								<mat-error *ngIf="!typeEntrepreneurFlag">El tipo de emprendimiento es requerido</mat-error>
+							</mat-radio-group>
+						</div>
+						<div>
+							<button mat-raised-button matStepperPrevious>Anterior</button>
+							<button mat-raised-button class="next-button" matStepperNext [disabled]="!typeEntrepreneurFlag">Siguiente</button>
+						</div>
+					</form>
+				</mat-step>
+				<mat-step [stepControl]="securityForm">
+					<form [formGroup]="securityForm">
+						<ng-template matStepLabel>Seguridad</ng-template>
+						<mat-form-field fxLayout="column">
+							<mat-label>Contraseña</mat-label>
+							<input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+							<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+								<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+							</button>
+							<mat-error *ngIf="securityForm['controls'].password.hasError('required')">La contraseña es requerida</mat-error>
+							<mat-error *ngIf="securityForm['controls'].password.hasError('minlength')">La contraseña debe tener más de 6 caracteres</mat-error>
+						</mat-form-field>
+						<div>
+							<button mat-raised-button matStepperPrevious>Anterior</button>
+							<button class="next-button" mat-raised-button matStepperNext [disabled]="securityForm.invalid" (click)="save()">Guardar</button>
+						</div>
+					</form>
+				</mat-step>
+			</mat-vertical-stepper>
+		</mat-card-content>
+	</mat-card>
+
+</div>

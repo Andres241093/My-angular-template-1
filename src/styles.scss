@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~ngx-org-chart/_theming.scss';
+
+:root {
+	--unapyme-primary: rgb(32,33,29);
+	--unapyme-secondary: rgb(220,209,206);
+}
+body{
+	margin: 100px 0px 0px 0px;
+	background-color: rgb(220,209,206);
+}
+
+@media only screen and (max-width: 599px){
+	body{
+		margin: 50px 0px 0px 0px;
+		background-color: rgb(220,209,206);
+	}
+}

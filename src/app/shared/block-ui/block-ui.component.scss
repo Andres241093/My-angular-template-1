@@ -1,0 +1,45 @@
+.container-absolute {
+	position: absolute; 
+	height: 100%; 
+	width: 100%;
+	/*background: green;*/
+	z-index: 1;
+}
+.container-relative {
+	position: relative;
+	min-height: 78px;
+}
+.center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.opacity {
+	opacity: 0.5;
+}
+
+.red-square {
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+	transition: all .8s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+	transform: translateX(10px);
+	opacity: 0;
+}
+
+.mat-spinner::ng-deep circle {
+  stroke: var(--unapyme-primary);
+}

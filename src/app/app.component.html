@@ -1,0 +1,76 @@
+<app-block-ui [isLoading]="loading | async" [type]="'cover'">
+	<app-header></app-header>
+	<mat-drawer-container class="example-container" autosize>
+		<mat-drawer fxHide="true" fxHide.lt-sm="false" class="example-sidenav" mode="side" opened>
+
+			<mat-list fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch" role="list">
+
+			<mat-list-item [routerLink]="initPath" role="listitem">
+				<!-- Inicio -->
+				<mat-icon>home</mat-icon>
+			</mat-list-item>				
+
+			<mat-list-item [routerLink]="'/about-us'" role="listitem">
+				<!-- Nosotros -->
+				<mat-icon>supervised_user_circle</mat-icon>
+			</mat-list-item>
+			<mat-list-item [matMenuTriggerFor]="nucleos" role="listitem">
+				<!-- Opción 2 -->
+				<mat-icon>low_priority</mat-icon>
+				<mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+			</mat-list-item>
+			<mat-menu #nucleos="matMenu" yPosition="below">
+				<button mat-menu-item>Opción 1</button>
+				<button mat-menu-item>Opción 2</button>
+				<button mat-menu-item>Opción 3</button>
+				<button mat-menu-item>Opción 4</button>
+			</mat-menu>
+			<mat-list-item [matMenuTriggerFor]="seccionales" role="listitem">
+				<!-- Opción 3 -->
+				<mat-icon>low_priority</mat-icon>
+				<mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+			</mat-list-item>
+			<mat-menu #seccionales="matMenu" yPosition="below">
+				<button mat-menu-item [matMenuTriggerFor]="oriental">Opción 1</button>
+				<button mat-menu-item [matMenuTriggerFor]="centro">Opción 2</button>
+				<button mat-menu-item [matMenuTriggerFor]="occidente">Opción 3</button>
+			</mat-menu>
+
+			<mat-menu #oriental="matMenu" yPosition="below">
+				<button mat-menu-item>Opción 1.1</button>
+				<button mat-menu-item>Opción 1.2</button>
+				<button mat-menu-item>Opción 1.3</button>
+			</mat-menu>
+			<mat-menu #centro="matMenu" yPosition="below">
+				<button mat-menu-item>Opción 2.1</button>
+				<button mat-menu-item>Opción 2.2</button>
+				<button mat-menu-item>Opción 2.3</button>
+			</mat-menu>
+			<mat-menu #occidente="matMenu" yPosition="below">
+				<button mat-menu-item>Opción 3.1</button>
+				<button mat-menu-item>Opción 3.2</button>
+				<button mat-menu-item>Opción 3.3</button>
+			</mat-menu>
+
+			<mat-list-item [matMenuTriggerFor]="proyectos" role="listitem">
+				<!-- Opción 4 -->
+				<mat-icon>low_priority</mat-icon>
+				<mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+			</mat-list-item>
+			<mat-menu #proyectos="matMenu" yPosition="below">
+				<button mat-menu-item matTooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed ante diam.">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed ante diam. 
+				</button>
+			</mat-menu>
+		</mat-list>
+
+
+		</mat-drawer>
+
+		<div class="example-sidenav-content">
+			<router-outlet></router-outlet>
+		</div>
+	</mat-drawer-container>
+
+	<app-footer></app-footer>
+</app-block-ui>

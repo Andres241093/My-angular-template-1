@@ -1,0 +1,33 @@
+.sticky{
+	position: fixed;
+	z-index: 2;
+	top: 0;
+    width: 100%;
+}
+.header{
+	height: auto;
+	background-color: rgb(220,209,206);
+	color: white;
+}
+mat-list mat-list-item{
+	color: white;
+	background-color: var(--unapyme-primary);
+	margin-top: -8px;
+}
+.list{
+	width: 100%;
+	background-color: var(--unapyme-primary);
+}
+mat-list mat-list-item:hover{
+	cursor: pointer;
+}
+
+mat-toolbar div button{
+	background-color: var(--unapyme-primary);
+	color: white;
+}
+
+button.mat-menu-item:hover{
+	background-color: var(--unapyme-primary);
+	color: white;
+}

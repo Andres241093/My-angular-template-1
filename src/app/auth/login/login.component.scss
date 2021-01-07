@@ -1,0 +1,25 @@
+.div-container{
+	min-height: 100vh;
+	position: relative;
+}
+
+.mat-card-container{
+	background-color: var(--unapyme-primary);
+	min-height: 40vh;
+}
+
+.mat-card-header-container,.mat-card-subtitle-container{
+	width:100%;
+	color: white;
+	text-align: center;
+	font-size: 18px;
+}
+
+.mat-card-title-container{
+	font-size: 40px;
+}
+
+.login-botton{
+	background-color: var(--unapyme-primary);
+	color: white;
+}

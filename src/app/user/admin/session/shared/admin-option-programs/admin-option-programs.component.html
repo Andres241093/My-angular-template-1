@@ -1,0 +1,86 @@
+	<mat-card class="mat-elevation-z5">
+		<div fxLayout="row" fxLayoutAlign="start center" class="mat-title">
+			<mat-icon>list</mat-icon>
+			&nbsp;
+			<span>Módulo de programas y eventos</span>
+		</div>
+
+		<div fxLayout="column" fxLayoutGap="5px">
+			<div fxLayout="row wrap" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
+
+				<mat-card class="mat-elevation-z5" fxFlex.lt-md="100" fxFlex.lt-sm="100" fxFlex="30" style="margin: 10px;">
+					<mat-card-header>
+						<img mat-card-avatar src="assets/images/admin/event.svg">
+						<mat-card-title>Programas</mat-card-title>
+						<mat-card-subtitle>Última modificación hace 28 minutos</mat-card-subtitle>
+					</mat-card-header>
+					<mat-card-content>
+						<p>
+							Aquí podrás crear, editar y eliminar los programas de formación
+						</p>
+					</mat-card-content>
+					<mat-card-actions>
+						<button [routerLink]="'/'" fxFlex="100" mat-raised-button  matBadgeColor="warn">
+							Ver programas
+						</button>
+					</mat-card-actions>
+				</mat-card>
+
+				<mat-card class="mat-elevation-z5" fxFlex.lt-md="100" fxFlex.lt-sm="100" fxFlex="30" style="margin: 10px;">
+					<mat-card-header>
+						<img mat-card-avatar src="assets/images/admin/expo.svg">
+						<mat-card-title>Exposiciones</mat-card-title>
+						<mat-card-subtitle>Última modificación hace 13 minutos</mat-card-subtitle>
+					</mat-card-header>
+					<mat-card-content>
+						<p >
+							Aquí podrás crear, editar y eliminar exposiciones
+						</p>
+					</mat-card-content>
+					<mat-card-actions>
+						<div fxLayout="row" fxLayout.lt-md="column" fxLayout.lt-sm="column">
+							&nbsp;
+							<button fxFlex="100" mat-raised-button  [routerLink]="''">
+								Ver exposiciones
+							</button>
+						</div>
+					</mat-card-actions>
+				</mat-card>
+				<mat-card class="mat-elevation-z5" fxFlex.lt-md="100" fxFlex.lt-sm="100" fxFlex="30" style="margin: 10px;">
+					<mat-card-header>
+						<img mat-card-avatar src="assets/images/admin/fair.svg">
+						<mat-card-title>Ferias</mat-card-title>
+						<mat-card-subtitle>Última modificación hace 3 días</mat-card-subtitle>
+					</mat-card-header>
+					<mat-card-content>
+						<p>
+							Aquí podrás crear, editar y eliminar ferias
+						</p>
+					</mat-card-content>
+					<mat-card-actions>
+						<button [routerLink]="['/']" fxFlex="100" mat-raised-button >
+							Ver ferias
+						</button>
+					</mat-card-actions>
+				</mat-card>
+
+				<mat-card class="mat-elevation-z5" fxFlex.lt-md="100" fxFlex.lt-sm="100" fxFlex="30" style="margin: 5px;">
+					<mat-card-header>
+						<img mat-card-avatar src="assets/images/admin/proyect.svg">
+						<mat-card-title>Proyectos</mat-card-title>
+						<mat-card-subtitle>Última modificación hace 2 horas</mat-card-subtitle>
+					</mat-card-header>
+					<mat-card-content>
+						<p>
+							Aquí podrás crear, editar y eliminar proyectos
+						</p>
+					</mat-card-content>
+					<mat-card-actions fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="5px">
+						<button [routerLink]="'/'" fxFlex fxFlex.lt-sm="100" mat-raised-button >
+							Ver proyectos
+						</button>
+					</mat-card-actions>
+				</mat-card>
+			</div>
+		</div>
+	</mat-card>

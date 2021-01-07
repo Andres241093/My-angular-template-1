@@ -1,0 +1,17 @@
+mat-drawer{
+	color: white;
+	background-color: var(--unapyme-primary);
+	position: fixed;
+	height: 100%;
+	margin: 50px 0px 0px 0px;
+}
+mat-list mat-list-item:hover{
+	cursor: pointer;
+}
+button.mat-menu-item:hover{
+	background-color: var(--unapyme-primary);
+	color: white;
+}
+mat-icon{
+	color: white;
+}

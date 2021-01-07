@@ -1,0 +1,33 @@
+<div>
+	<div class="container-relative" *ngIf="type == 'replace'">
+		<div class="text-center" *ngIf="isLoading">
+			<mat-spinner></mat-spinner>
+		</div>
+		<div [ngClass]="{ opacity: isLoading }" *ngIf="!isLoading">
+			<ng-content></ng-content>
+		</div>
+
+
+		<!-- <transition name="slide-fade" tag="div">
+			<div v-bind:class="{ opacity: isLoading }" *ngIf="!isLoading">
+				<ng-content></ng-content>
+			</div>
+		</transition> -->
+	</div>
+
+	<div class="container-relative" *ngIf="type == 'cover'">
+		<div class="container-absolute" *ngIf="isLoading">
+			<div class="center">
+				<mat-spinner></mat-spinner>
+			</div>
+		</div>
+		<div [ngClass]="{ opacity: isLoading }">
+			<ng-content></ng-content>
+		</div>
+		<!-- <transition name="slide-fade">
+			<div v-bind:class="{ opacity: isLoading }">
+				<ng-content></ng-content>
+			</div>
+		</transition> -->
+	</div>
+</div>
